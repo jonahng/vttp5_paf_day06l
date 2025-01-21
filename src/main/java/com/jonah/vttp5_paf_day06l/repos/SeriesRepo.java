@@ -74,10 +74,12 @@ public class SeriesRepo {
         return template.findDistinct(new Query(), "type", C_SERIES, String.class);
      }
 
-
+     //db.songs.find({ released_year: year}).projection({track_name:1, 'artost(s)_name':1}).sort({track_name:1})
      public List<Document> findTopSongsYear(int year){
         Criteria criteria = Criteria.where("released_year").is(year);
         Query query = Query.query(criteria);
+
+        //query.fields().include("artist","id")
         return template.find(query, Document.class, "songs");
 
      }
