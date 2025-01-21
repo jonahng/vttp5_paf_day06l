@@ -23,6 +23,7 @@ public class Vttp5PafDay06lApplication implements CommandLineRunner{
 	public void run(String... args){
 		//use the query
 		List<Document> result = seriesRepo.findSeriesByName("the");
+		List<Document> seriesResults = seriesRepo.findSeriesByRating(7.3f);
 
 		result.stream()
 		.limit(3)
@@ -42,6 +43,8 @@ public class Vttp5PafDay06lApplication implements CommandLineRunner{
 			Document d = result.get(i);
 			System.out.println(d.toJson());
 		}
+
+		System.out.println("TYPES OF SERIES" + seriesRepo.findTypeOfSeries());
 	}
 
 }
