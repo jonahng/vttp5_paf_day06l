@@ -54,7 +54,10 @@ public class SongController {
 
 
     @GetMapping("")
-    public String chooseYear(){
+    public String chooseYear(Model model){
+        List<Integer> topYears = songService.getTopYears();
+
+        model.addAttribute("years", topYears);
 
         return "chooseYear";
     }

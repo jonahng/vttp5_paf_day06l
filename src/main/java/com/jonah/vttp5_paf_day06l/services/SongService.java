@@ -17,5 +17,9 @@ public class SongService {
         return seriesRepo.findTopSongsYear(year);
     }
 
+    public List<Integer> getTopYears(){
+        return seriesRepo.findYearsTopSongs();
+    }
+
     
 }

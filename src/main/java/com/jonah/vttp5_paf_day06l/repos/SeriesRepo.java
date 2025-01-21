@@ -81,4 +81,9 @@ public class SeriesRepo {
         return template.find(query, Document.class, "songs");
 
      }
+
+     public List<Integer> findYearsTopSongs(){
+        List<Integer> topYearList= template.findDistinct(new Query(), "released_year", "songs", Integer.class);
+        return topYearList;
+     }
 }

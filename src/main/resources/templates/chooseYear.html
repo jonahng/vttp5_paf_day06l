@@ -20,12 +20,9 @@
           <div class="mb-3">
             <select name="Year">
               <option value="">YEAR</option>
-
-              <option value = 2020>2020</option>
-              <option value = 2021>2021</option>
-              <option value = 2022>2022</option>
-              <option value = 2023>2023</option>
-              <option value = 2020>2024</option>
+              <option th:each="year: ${years}"
+                      th:value="${year}"
+                      th:text="${year}"></option>
             </select>
 
           </div>
