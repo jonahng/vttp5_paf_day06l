@@ -73,4 +73,12 @@ public class SeriesRepo {
      public List<String> findTypeOfSeries(){
         return template.findDistinct(new Query(), "type", C_SERIES, String.class);
      }
+
+
+     public List<Document> findTopSongsYear(int year){
+        Criteria criteria = Criteria.where("released_year").is(year);
+        Query query = Query.query(criteria);
+        return template.find(query, Document.class, "songs");
+
+     }
 }
