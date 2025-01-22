@@ -1,13 +1,9 @@
-spring.application.name=vttp5_paf_day06l
+Commands to import into mongo
 
+mongoimport -dtvshows -cgames --type=json --jsonArray --file=C:\Users\65932\Downloads\bgg\game.json
 
-spring.data.mongodb.uri= mongodb://localhost:27017/tvshows
+for csv files, type=json and --headerline for header
 
-#Also can be done  like this
-
-#spring.data.mongodb.host=localhost
-#spring.data.mongodb.port=27017
-#spring.data.mongodb.database=tvshows
 
 
 
@@ -17,17 +13,12 @@ spring.data.mongodb.uri= mongodb://localhost:27017/tvshows
 #spring.data.mongodb.uri= mongodb+srv://<db_username>:<db_password>@cluster0.dj2cv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 #but since we do not want to include db username and password, remove everything up to cluster:
 
-
-
-
 #spring.data.mongodb.uri=mongodb+srv://cluster0.dj2cv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 #input username and password separately
 #spring.data.mongodb.username=username
 #spring.data.mongodb.password=password
 #spring.data.mongodb.database=boardgames
 #IN SPRINGBOOT, you MUST say which database name
-
-
 
 
 #in command prompt,
